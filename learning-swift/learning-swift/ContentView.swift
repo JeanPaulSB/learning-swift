@@ -8,27 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var message: String = "Welcome to our app"
     var body: some View {
-        VStack {
-            Text("What is football for you?").font(.title).foregroundStyle(.green)
-        }
-       
-        
-        HStack{
-            Image(systemName: "figure.american.football").resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100).foregroundStyle(.red)
-            Image(systemName: "figure.australian.football").resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100).foregroundStyle(.gray)
-            .padding()
-            Image(systemName: "figure.indoor.soccer").resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100).foregroundStyle(.blue)
-            .padding()
+        VStack{
+            Text(message)
             
-
+            Button("Press me to start") {
+                   message = "Now you have updated me."
+            }
         }
+        
        
     }
 }
