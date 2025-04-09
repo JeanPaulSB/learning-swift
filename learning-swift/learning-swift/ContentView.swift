@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var message: String = "Welcome to our app"
+    
+    @State var message: String = "Nothing to show..."
     var body: some View {
         VStack{
-            Text(message)
+            Spacer()
+            Text(message).fontWeight(.ultraLight).foregroundStyle(.black).font(.title2)
+                .frame(width: 100, height: 50)
             
-            Button("Press me to start") {
-                   message = "Now you have updated me."
+            Spacer()
+            HStack{
+                Button("Awesome"){
+                    message = "Awesome!"
+                }.buttonStyle(.borderedProminent).tint(.green).font(.title2)
+                Spacer()
+                Button("Great"){
+                    message = "Great!"
+                }.buttonStyle(.borderedProminent).tint(.purple).font(.title2)
             }
         }
-        
-       
-    }
-}
+    }}
 
 #Preview {
     ContentView()
